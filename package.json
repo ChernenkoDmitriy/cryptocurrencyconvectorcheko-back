@@ -28,6 +28,8 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/schedule": "^2.0.1",
     "cross-env": "^7.0.3",
+    "docker": "^1.0.0",
+    "docker-compose": "^0.23.17",
     "firebase-admin": "^11.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

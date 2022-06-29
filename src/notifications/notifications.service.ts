@@ -2,9 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { Interval } from '@nestjs/schedule';
 import admin from 'firebase-admin';
 
+const INTERVAL_MS = 60000 * 30;
+
 @Injectable()
 export class NotificationsService {
-  @Interval(30000)
+  @Interval(INTERVAL_MS)
   async sendNotification() {
     const message = {
       data: {

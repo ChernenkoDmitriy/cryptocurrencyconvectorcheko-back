@@ -6,18 +6,20 @@ const INTERVAL_MS = 60000 * 30;
 
 @Injectable()
 export class NotificationsService {
-  @Interval(INTERVAL_MS)
+  @Interval(60000)
   async sendNotification() {
-    const message = {
-      data: {
-        type: 'warning',
-        content: 'A new weather warning has been created!',
-      },
-      topic: 'rateNotification',
-    };
     admin
       .messaging()
-      .send(message)
+      .send({
+        data: {
+          type: 'warning',
+          content: 'A new weather warning has been created!',
+        },
+        topic: 'rateNotification',
+        android: {
+          priority: 'high'
+        }
+      })
       .then((response) => {
         console.log('Successfully sent message:', response);
       })

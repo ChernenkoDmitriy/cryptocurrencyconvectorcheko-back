@@ -36,7 +36,6 @@ export class PurchaseService {
     const { userId, appType, purchase } = body;
 
     assert(['ios', 'android'].includes(appType));
-    console.log(process.env.ANDROID_PACKAGE_NAME);
 
     const receipt =
       appType === 'ios'
